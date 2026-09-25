@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.UUID;
+
 public class ProductoElectronico extends Producto{
 
     public int garantia;
@@ -8,7 +10,7 @@ public class ProductoElectronico extends Producto{
 //        super(nombre, codigo, precio, categoria);
 //    }
 
-    public ProductoElectronico(String nombre, Integer codigo, Integer precio, String categoria, int garantia) {
+    public ProductoElectronico(String nombre, UUID codigo, Integer precio, String categoria, int garantia) {
         super(nombre, codigo, precio, categoria);
         this.garantia = garantia;
     }
