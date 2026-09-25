@@ -1,3 +1,5 @@
+package com.example;
+
 public abstract class Empleado {
     protected String nombre;
     protected int idEmpleado;

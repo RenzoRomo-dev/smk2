@@ -1,3 +1,5 @@
+package com.example;
+
 public class Gerente extends Empleado {
     private double bonoGerencial;
 

@@ -1,3 +1,5 @@
+package com.example;
+
 public class Cajero extends Empleado {
     private int ventasRealizadas;
 
