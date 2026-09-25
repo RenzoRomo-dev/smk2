@@ -1,3 +1,5 @@
+package com.example;
+
 public abstract class Producto {
 
     private static int totalProductos = 0;

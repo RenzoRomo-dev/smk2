@@ -1,3 +1,5 @@
+package com.example;
+
 public class ProductoElectronico extends Producto{
 
     public int garantia;

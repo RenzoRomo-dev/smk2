@@ -1,3 +1,5 @@
+package com.example;
+
 public class ProductoHigiene extends Producto{
 
     public String tipoDeUso;
