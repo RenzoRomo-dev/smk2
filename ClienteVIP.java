@@ -1,3 +1,5 @@
+package com.example;
+
 public class ClienteVIP extends Cliente {
     private final int descuentoVIP;
 
