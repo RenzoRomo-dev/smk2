@@ -1,12 +1,13 @@
 package com.example;
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class ProductoAlimenticio extends Producto{
 
     public LocalDate fechaCaducicad;
     public boolean esPerecedero;
 
-    public ProductoAlimenticio(String nombre, Integer codigo, Integer precio, String categoria, LocalDate fechaCaducicad, boolean esPerecedero) {
+    public ProductoAlimenticio(String nombre, UUID codigo, Integer precio, String categoria, LocalDate fechaCaducicad, boolean esPerecedero) {
         super(nombre, codigo, precio, categoria);
         this.fechaCaducicad = fechaCaducicad;
         this.esPerecedero = esPerecedero;
@@ -28,10 +29,6 @@ public class ProductoAlimenticio extends Producto{
 
     public void setEsPerecedero(boolean esPerecedero) {
         this.esPerecedero = esPerecedero;
-    }
-
-    public ProductoAlimenticio(String nombre, Integer codigo, Integer precio, String categoria) {
-        super(nombre, codigo, precio, categoria);
     }
 
     @Override //Completar logica
