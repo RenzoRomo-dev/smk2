@@ -18,7 +18,8 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-
+                    System.out.println( "Nombre del Producto");
+                    String NombProd= scanner.nextLine();
                     break;
                 case 2:
 
