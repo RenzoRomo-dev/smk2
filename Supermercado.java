@@ -74,6 +74,15 @@ public class Supermercado {
         }
     }
 
+    //metodo mostrar clientes registrados
+    public void mostrarClientes(){
+        System.out.println("Clientes registrados");
+        if (clientes.isEmpty()){
+            System.out.println("No hay clientes registrados");
+            return;
+        }
+    }
+
     public List<Producto> getProductosDisponibles() {
         return productosDisponibles;
     }
