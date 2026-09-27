@@ -3,20 +3,77 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Supermercado {
-    private String productosDisponible;
-    private List<Cliente> listaClientes = new ArrayList<>();
-    private List<Empleado> listaEmpleados = new ArrayList<>();
-    private List<Producto> listaPoductos = new ArrayList<>();
+    private List<Producto> productosDisponibles;
+    private List<Cliente> clientes;
+    private List<Empleado> empleados;
 
+    public Supermercado () {
+        this.productosDisponibles = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.empleados = new ArrayList<>();
+    }
+
+    //los metodos para alta y registros
     public void agregarProducto(Producto producto) {
         if (producto != null){
-            listaPoductos.add(producto);
-            System.out.println("producto agregado con exito");
+            productosDisponibles.add(producto);
+            System.out.println("producto" +producto.getNombre()+ " agregado con exito");
         } else {
             System.out.println("el producto no es valido");
         }
     };
 
+    public void agregarCliente(Cliente cliente) {
+        if (cliente != null) {
+            clientes.add(cliente);
+            System.out.println("Cliente " + cliente.getNombre() + " registrado con exito");
+        } else {
+            System.out.println("El cliente no es valido");
+        }
+    }
 
+    public void agregarEmpleado(Empleado empleado) {
+        if (empleado != null) {
+            empleados.add(empleado);
+            System.out.println("Empleado " + empleado.getNombre() + " agregado al sistema");
+        } else {
+            System.out.println("El empleado no es valido");
+        }
+    }
 
+    //Esto es para registrar compra con control de excepciones
+    public void registrarCompra(Cliente cliente, Producto producto)
+            throws ClienteNoRegistradoException, ProductoNoDisponibleException {
+
+        //cliente registrado
+        if (!clientes.contains(cliente)) {
+            throw new ClienteNoRegistradoException(
+                    "Error: El cliente " + (cliente != null ? cliente.getNombre() : "desconocido") + " no esta registrado en el sistema."
+            );
+        }
+
+        //cliente disponible
+        if (!productosDisponibles.contains(producto)) {
+            throw new ProductoNoDisponibleException(
+                    "Error: El producto " + (producto != null ? producto.getNombre() : "desconocido") + " no esta disponible en el inventario."
+            );
+        }
+
+        //realiza la compra y actualiza el inventario
+        cliente.comprar(producto);
+        productosDisponibles.remove(producto);
+        System.out.println("Compra registrada con exito para " + cliente.getNombre() + ": " + producto.getNombre());
+    }
+
+    public List<Producto> getProductosDisponibles() {
+        return productosDisponibles;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public List<Empleado> getEmpleados() {
+        return empleados;
+    }
 }
