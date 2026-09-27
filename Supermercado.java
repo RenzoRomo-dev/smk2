@@ -65,6 +65,15 @@ public class Supermercado {
         System.out.println("Compra registrada con exito para " + cliente.getNombre() + ": " + producto.getNombre());
     }
 
+    //metodo mostrar inventario disponible
+    public void mostrarInventario(){
+        System.out.println("Inventario de los productos disponibles");
+        if (productosDisponibles.isEmpty()){
+            System.out.println("No hay productos disponibles");
+            return;
+        }
+    }
+
     public List<Producto> getProductosDisponibles() {
         return productosDisponibles;
     }
