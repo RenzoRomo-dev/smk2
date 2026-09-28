@@ -90,6 +90,7 @@ public class Supermercado {
             System.out.println("No hay clientes registrados");
             return;
         }
+        //aca tiene que ir un for
     }
 
     public List<Producto> getProductosDisponibles() {
