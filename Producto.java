@@ -29,6 +29,7 @@ public abstract class Producto {
 //        Producto.totalProductos = totalProductos;
 //    }
 
+
     public String getNombre() {
         return nombre;
     }
@@ -63,4 +64,6 @@ public abstract class Producto {
 
     public abstract double calcularPrecioFinal();
     public abstract String mostrarInformacion();
+
+
 }

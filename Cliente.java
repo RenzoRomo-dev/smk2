@@ -1,14 +1,19 @@
 package com.example;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente {
     private String nombre;
     private int dni;
-    public static int totalclientes;
+    private List<Producto> compras;
+    public static int totalclientes=0;
 
     // Constructor
-    public Cliente(String nombre, int dni, int totalclientes) {
+    public Cliente(String nombre, int dni,int totalclientes) {
         this.nombre = nombre;
         this.dni = dni;
+        this.compras = new ArrayList<>();
+        Cliente.totalclientes++;
     }
 
     // Seters y Geters
@@ -41,5 +46,14 @@ public class Cliente {
     }
 
     public void mostrarCompras() {
+        if (compras.isEmpty()) {
+            System.out.println("El cliente " + nombre + " no tiene compras registradas.");
+        } else {
+            System.out.println("Compras de " + nombre + ":");
+            for (Producto p : compras) {
+                System.out.println("- " + p.mostrarInformacion());
+            }
+        }
     }
-}
+    }
+
