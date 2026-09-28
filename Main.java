@@ -12,13 +12,19 @@ public class Main {
         System.out.println("\nañadir productos\n");
         ProductoAlimenticio prodAlim = new ProductoAlimenticio(
                 " Arroz", UUID.randomUUID(), 1500, "Alimenticio", LocalDate.now().plusDays(3), true);
+        ProductoAlimenticio prodAlim2 = new ProductoAlimenticio(
+                " Lentejas", UUID.randomUUID(), 1000, "Alimenticio", LocalDate.now().plusDays(3), true);
         ProductoElectronico prodElec = new ProductoElectronico(
                 " Auriculares ", UUID.randomUUID(), 25000, "Electrónico", 3);
+        ProductoElectronico prodElec2 = new ProductoElectronico(
+                " Mini PC ", UUID.randomUUID(), 2005000, "Electrónico", 3);
         ProductoHigiene prodHig = new ProductoHigiene(
                 " Shampoo Head&shoulders", UUID.randomUUID(), 3500, "Higiene", "personal");
 
         supermercado.agregarProducto(prodAlim);
+        supermercado.agregarProducto(prodAlim2);
         supermercado.agregarProducto(prodElec);
+        supermercado.agregarProducto(prodElec2);
         supermercado.agregarProducto(prodHig);
 
         System.out.println("\nregistro de clientes\n");
