@@ -45,6 +45,7 @@ public class Cliente {
 
     // Metodos
     public void comprar(Producto producto) {
+        //necesitamos la logica de este metodo
     }
 
     public void mostrarCompras() {

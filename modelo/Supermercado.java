@@ -23,7 +23,7 @@ public class Supermercado {
     public void agregarProducto(Producto producto) {
         if (producto != null){
             productosDisponibles.add(producto);
-            System.out.println("producto" +producto.getNombre()+ " agregado con exito");
+            System.out.println("producto " +producto.getNombre()+ " agregado con exito");
         } else {
             System.out.println("el producto no es valido");
         }
@@ -100,7 +100,8 @@ public class Supermercado {
         if (empleados.isEmpty()){
             System.out.println("No hay empleados registrados");
             return;
-        } for (Empleado emp : empleados){
+        }
+        for (Empleado emp : empleados){
             System.out.println("ID: " + emp.getIdEmpleado() + " | Empleado: " + emp.getNombre() + " | Salario: $" + emp.calcularSalario());
         }
     }
