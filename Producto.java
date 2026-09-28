@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public abstract class Producto {
 
+
     private static int totalProductos = 0;
     private String nombre;
     private UUID codigo; // Revisar funcionamiento del ID
@@ -17,6 +18,7 @@ public abstract class Producto {
         this.precio = precio;
         this.categoria = categoria;
         totalProductos++;
+
     }
 
     public static int getTotalProductos() {
