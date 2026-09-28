@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Supermercado supermercado = new Supermercado();
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("\n");
+        System.out.println("\n---Inicio de prueba de funcionamiento de codigo en general---\n");
         System.out.println("\nañadir productos\n");
         ProductoAlimenticio prodAlim = new ProductoAlimenticio(
                 " Arroz", UUID.randomUUID(), 1500, "Alimenticio", LocalDate.now().plusDays(3), true);
@@ -87,6 +88,7 @@ public class Main {
         supermercado.agregarProducto(prodElec);
         supermercado.agregarProducto(prodAlim);
         supermercado.agregarProducto(prodElec);
+        System.out.println("\n");
         System.out.println("\n---Fin de la prueba de funcionamiento---\n");
 
         int opcion;
