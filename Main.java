@@ -26,15 +26,15 @@ public class Main {
         System.out.println("\n---Inicio de prueba de funcionamiento de codigo en general---\n");
         System.out.println("\nañadir productos\n");
         ProductoAlimenticio prodAlim = new ProductoAlimenticio(
-                " Arroz", UUID.randomUUID(), 1500, "Alimenticio", LocalDate.now().plusDays(3), true);
+                " Arroz", 1500, "Alimenticio", LocalDate.now().plusDays(3), true);
         ProductoAlimenticio prodAlim2 = new ProductoAlimenticio(
-                " Lentejas", UUID.randomUUID(), 1000, "Alimenticio", LocalDate.now().plusDays(3), true);
+                " Lentejas",  1000, "Alimenticio", LocalDate.now().plusDays(3), true);
         ProductoElectronico prodElec = new ProductoElectronico(
-                " Auriculares ", UUID.randomUUID(), 25000, "Electrónico", 3);
+                " Auriculares ", 25000, "Electrónico", 3);
         ProductoElectronico prodElec2 = new ProductoElectronico(
-                " Mini PC ", UUID.randomUUID(), 2005000, "Electrónico", 3);
+                " Mini PC ",  2005000, "Electrónico", 3);
         ProductoHigiene prodHig = new ProductoHigiene(
-                " Shampoo Head&shoulders", UUID.randomUUID(), 3500, "Higiene", TipoDeUso.PERSONAL);
+                " Shampoo Head&shoulders", 3500, "Higiene", TipoDeUso.PERSONAL);
 
         supermercado.agregarProducto(prodAlim);
         supermercado.agregarProducto(prodAlim2);
@@ -136,19 +136,19 @@ public class Main {
                         System.out.print("¿Es perecedero? (true/false): ");
                         boolean perecedero = scanner.nextBoolean();
                         supermercado.agregarProducto(new ProductoAlimenticio(
-                                nombProd, UUID.randomUUID(), precio, "Alimentación", LocalDate.now().plusDays(dias), perecedero));
+                                nombProd, precio, "Alimentación", LocalDate.now().plusDays(dias), perecedero));
                     } else if (tipo == 2) {
                         System.out.print("Años de garantía: ");
                         int garantia = scanner.nextInt();
                         supermercado.agregarProducto(new ProductoElectronico(
-                                nombProd, UUID.randomUUID(), precio, "Electrónica", garantia));
+                                nombProd,  precio, "Electrónica", garantia));
                     } else if (tipo == 3) {
                         System.out.println("Seleccione tipo de uso: 1. Personal | 2. Doméstico");
                         int opcionUso = Integer.parseInt(scanner.nextLine());
                         TipoDeUso tipoDeUso = (opcionUso == 1) ? TipoDeUso.PERSONAL : TipoDeUso.DOMESTICO;
 
                         supermercado.agregarProducto(new ProductoHigiene(
-                                nombProd, UUID.randomUUID(), precio, "Higiene", tipoDeUso));
+                                nombProd,  precio, "Higiene", tipoDeUso));
                     } else {
                         System.out.println("Tipo no válido.");
                     }
