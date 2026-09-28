@@ -1,6 +1,18 @@
 package com.example;
 
-import com.example.utilidades.TipoDeUso;
+import com.example.excepciones.ClienteNoRegistradoException;
+import com.example.excepciones.ProductoNoDisponibleException;
+import com.example.modelo.Supermercado;
+import com.example.modelo.clientes.Cliente;
+import com.example.modelo.clientes.ClienteVIP;
+import com.example.modelo.empleados.Cajero;
+import com.example.modelo.empleados.Empleado;
+import com.example.modelo.empleados.Gerente;
+import com.example.modelo.productos.Producto;
+import com.example.modelo.productos.ProductoAlimenticio;
+import com.example.modelo.productos.ProductoElectronico;
+import com.example.modelo.productos.ProductoHigiene;
+import com.example.modelo.productos.TipoDeUso;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -169,11 +181,7 @@ public class Main {
 
                 case 4:
                     supermercado.mostrarInventario();
-                    for (Producto p : supermercado.getProductosDisponibles()) {
-                        System.out.println("- " + p.getNombre() + " | Categoría: " + p.getCategoria()
-                                + " | Precio Base: $" + p.getPrecio()
-                                + " | Precio Final: $" + p.calcularPrecioFinal());
-                    }
+
                     break;
 
                 case 5:

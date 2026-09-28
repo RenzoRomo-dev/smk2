@@ -1,4 +1,6 @@
-package com.example;
+package com.example.modelo.clientes;
+
+import com.example.modelo.productos.Producto;
 
 public class ClienteVIP extends Cliente {
     private final int descuentoVIP;

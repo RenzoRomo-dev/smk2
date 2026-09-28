@@ -1,4 +1,4 @@
-package com.example.utilidades;
+package com.example.modelo.productos;
 
 public enum TipoDeUso {
     PERSONAL,

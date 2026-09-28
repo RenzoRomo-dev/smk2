@@ -1,6 +1,4 @@
-package com.example;
-
-import com.example.utilidades.TipoDeUso;
+package com.example.modelo.productos;
 
 import java.util.UUID;
 
@@ -23,7 +21,15 @@ public class ProductoHigiene extends Producto{
 
     @Override
     public String mostrarInformacion() {
-        return "";
+        return String.format("[%s] %s | Código: %s | Base: $%.2f | Final: $%.2f | Tipo de uso: %s",
+                getCategoria(),
+                getNombre(),
+                getCodigo(),
+                (double) getPrecio(),
+                calcularPrecioFinal(),
+                tipoDeUso
+
+        );
     }
 
 

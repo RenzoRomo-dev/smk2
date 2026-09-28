@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.productos;
 
 import java.util.UUID;
 

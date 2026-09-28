@@ -1,4 +1,6 @@
-package com.example;
+package com.example.modelo.clientes;
+
+import com.example.modelo.productos.Producto;
 import java.util.ArrayList;
 import java.util.List;
 

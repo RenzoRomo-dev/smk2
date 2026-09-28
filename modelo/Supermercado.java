@@ -1,4 +1,10 @@
-package com.example;
+package com.example.modelo;
+
+import com.example.excepciones.ClienteNoRegistradoException;
+import com.example.excepciones.ProductoNoDisponibleException;
+import com.example.modelo.clientes.Cliente;
+import com.example.modelo.empleados.Empleado;
+import com.example.modelo.productos.Producto;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +77,9 @@ public class Supermercado {
         if (productosDisponibles.isEmpty()){
             System.out.println("No hay productos disponibles");
             return;
+        }
+        for (Producto p : productosDisponibles) {
+            System.out.println("- " + p.mostrarInformacion());
         }
     }
 

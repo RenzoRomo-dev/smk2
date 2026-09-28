@@ -1,4 +1,4 @@
-package com.example;
+package com.example.interfaces;
 
 public interface Promocionable {
     double aplicarDescuento(double porcentaje);

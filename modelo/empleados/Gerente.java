@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.empleados;
 
 public class Gerente extends Empleado {
     private double bonoGerencial;

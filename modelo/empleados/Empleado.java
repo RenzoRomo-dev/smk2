@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.empleados;
 
 public abstract class Empleado {
     protected String nombre;

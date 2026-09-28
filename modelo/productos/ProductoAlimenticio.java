@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.productos;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
@@ -41,7 +41,7 @@ public class ProductoAlimenticio extends Producto{
         long diasRestantes = ChronoUnit.DAYS.between(LocalDate.now(), this.fechaCaducicad);
 
         if (diasRestantes >= 0 && diasRestantes < 5){
-            return precioBase + 0.70;
+            return precioBase * 0.70;
         }
 
         return precioBase;
@@ -50,7 +50,15 @@ public class ProductoAlimenticio extends Producto{
 
     @Override
     public String mostrarInformacion() {
-        return "";
+        return String.format("[%s] %s | Código: %s | Base: $%.2f | Final: $%.2f | Vence: %s | Perecedero: %s",
+                getCategoria(),
+                getNombre(),
+                getCodigo(),
+                (double) getPrecio(),
+                calcularPrecioFinal(),
+                fechaCaducicad,
+                esPerecedero ? "Sí" : "No"
+        );
     }
 
 }

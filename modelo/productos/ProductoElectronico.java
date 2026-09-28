@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.productos;
 
 import java.util.UUID;
 
@@ -28,6 +28,14 @@ public class ProductoElectronico extends Producto{
 
     @Override
     public String mostrarInformacion() {
-        return "";
+        return String.format("[%s] %s | Código: %s | Base: $%.2f | Final: $%.2f | Garantia: %s",
+                getCategoria(),
+                getNombre(),
+                getCodigo(),
+                (double) getPrecio(),
+                calcularPrecioFinal(),
+                garantia + (garantia == 1 ? " año" : " años")
+
+        );
     }
 }
