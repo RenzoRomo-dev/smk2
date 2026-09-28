@@ -1,5 +1,6 @@
 package com.example;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 public class ProductoAlimenticio extends Producto{
@@ -33,7 +34,18 @@ public class ProductoAlimenticio extends Producto{
 
     @Override //Completar logica
     public double calcularPrecioFinal() {
-        return 0;
+        double precioBase = this.getPrecio();
+
+        // ChronoUnit.DAYS.between
+        // funcion que calcula los días restantes entre hoy y la fecha de caducidad
+        long diasRestantes = ChronoUnit.DAYS.between(LocalDate.now(), this.fechaCaducicad);
+
+        if (diasRestantes >= 0 && diasRestantes < 5){
+            return precioBase + 0.70;
+        }
+
+        return precioBase;
+
     }
 
     @Override

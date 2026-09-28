@@ -17,7 +17,13 @@ public class ProductoElectronico extends Producto{
 
     @Override// Completar logica
     public double calcularPrecioFinal() {
-        return 0;
+        double precioBase =  this.getPrecio();
+
+        if (this.garantia > 2){
+            return precioBase * 1.05;
+        }
+
+        return precioBase;
     }
 
     @Override

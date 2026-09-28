@@ -1,5 +1,7 @@
 package com.example;
 
+import com.example.utilidades.TipoDeUso;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.UUID;
@@ -20,7 +22,7 @@ public class Main {
         ProductoElectronico prodElec2 = new ProductoElectronico(
                 " Mini PC ", UUID.randomUUID(), 2005000, "Electrónico", 3);
         ProductoHigiene prodHig = new ProductoHigiene(
-                " Shampoo Head&shoulders", UUID.randomUUID(), 3500, "Higiene", "personal");
+                " Shampoo Head&shoulders", UUID.randomUUID(), 3500, "Higiene", TipoDeUso.PERSONAL);
 
         supermercado.agregarProducto(prodAlim);
         supermercado.agregarProducto(prodAlim2);
@@ -129,10 +131,12 @@ public class Main {
                         supermercado.agregarProducto(new ProductoElectronico(
                                 nombProd, UUID.randomUUID(), precio, "Electrónica", garantia));
                     } else if (tipo == 3) {
-                        System.out.print("Tipo de uso (Personal/Doméstico): ");
-                        String uso = scanner.nextLine();
+                        System.out.println("Seleccione tipo de uso: 1. Personal | 2. Doméstico");
+                        int opcionUso = Integer.parseInt(scanner.nextLine());
+                        TipoDeUso tipoDeUso = (opcionUso == 1) ? TipoDeUso.PERSONAL : TipoDeUso.DOMESTICO;
+
                         supermercado.agregarProducto(new ProductoHigiene(
-                                nombProd, UUID.randomUUID(), precio, "Higiene", uso));
+                                nombProd, UUID.randomUUID(), precio, "Higiene", tipoDeUso));
                     } else {
                         System.out.println("Tipo no válido.");
                     }
