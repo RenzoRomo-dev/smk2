@@ -51,11 +51,9 @@ public class Main {
         supermercado.agregarCliente(clienteVip);
         supermercado.mostrarClientes();
 
+        //llamo al metodo mostrarInventario de la clase Supermercado
         System.out.println("\nStock inicial\n");
         supermercado.mostrarInventario();
-        for (Producto p : supermercado.getProductosDisponibles()) {
-            System.out.println("- " + p.getNombre() + " (" + p.getCategoria() + ") | Precio: $" + p.getPrecio());
-        }
 
         System.out.println("\ncompras y descuento a los vip\n");
         try {
@@ -67,11 +65,9 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+        //llamo al meotodo mostrarInventario() de la clase Supermercado
         System.out.println("\nStock actualizado (luegfo de la comprfa)\n");
         supermercado.mostrarInventario();
-        for (Producto p : supermercado.getProductosDisponibles()) {
-            System.out.println("- " + p.getNombre() + " (" + p.getCategoria() + ") | Precio: $" + p.getPrecio());
-        }
 
         System.out.println("\nExcepciones \n");
         try {
@@ -86,17 +82,15 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+
         System.out.println("\nREGISTRO Y CÁLCULO DE SALARIOS DE EMPLEADOS\n");
         Cajero cajero = new Cajero("Lucas Díaz", 1, 450000, 20);
         Gerente gerente = new Gerente("Laura Méndez", 2, 850000, 150000);
 
         supermercado.agregarEmpleado(cajero);
         supermercado.agregarEmpleado(gerente);
+        supermercado.mostrarSalariosEmpleados();
 
-        for (Empleado emp : supermercado.getEmpleados()) {
-            System.out.println("Empleado: " + emp.getNombre() + " (ID: " + emp.getIdEmpleado()
-                    + ") | Salario Final: $" + emp.calcularSalario());
-        }
 
         supermercado.agregarProducto(prodAlim);
         supermercado.agregarProducto(prodElec);
@@ -172,15 +166,9 @@ public class Main {
                     break;
 
                 case 3:
-                    //ESto yo creo q lo deberia hacer supermercado para q no maneje la logica el main
-                    //entonces deberiamos agregar la func mostrarSalariosEmpleados() en supermercado
-                    //la actividad no lo pide pero seria lo mas limpio asi aca solo quedaria esta linea:
-                    //supermercado.mostrarSalariosEmpleados()
-                    System.out.println("\n--- Salarios de Empleados ---");
-                    for (Empleado emp : supermercado.getEmpleados()) {
-                        System.out.println("ID: " + emp.getIdEmpleado() + " | Nombre: " + emp.getNombre()
-                                + " | Salario Final: $" + emp.calcularSalario());
-                    }
+                    //la logica lo maneja la clase supermercado, aca solo llamo al meotodo
+                    supermercado.mostrarSalariosEmpleados();
+
                     break;
 
                 case 4:
