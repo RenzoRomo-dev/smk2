@@ -90,9 +90,18 @@ public class Supermercado {
             System.out.println("No hay clientes registrados");
             return;
         }
-
         for (Cliente c : clientes){
             System.out.println("- " + c.getNombre() + " (DNI: " + c.getDni() + ")");
+        }
+    }
+
+    public void mostrarSalariosEmpleados(){
+        System.out.println("Salario de los Empleados");
+        if (empleados.isEmpty()){
+            System.out.println("No hay empleados registrados");
+            return;
+        } for (Empleado emp : empleados){
+            System.out.println("ID: " + emp.getIdEmpleado() + " | Empleado: " + emp.getNombre() + " | Salario: $" + emp.calcularSalario());
         }
     }
 
