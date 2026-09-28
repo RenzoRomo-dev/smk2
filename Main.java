@@ -46,13 +46,13 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("\nStock actualizado (luegfo de la comprfa\n)");
+        System.out.println("\nStock actualizado (luegfo de la comprfa)\n");
         supermercado.mostrarInventario();
         for (Producto p : supermercado.getProductosDisponibles()) {
             System.out.println("- " + p.getNombre() + " (" + p.getCategoria() + ") | Precio: $" + p.getPrecio());
         }
 
-        System.out.println("\nExcepciones (PRODUCTO NO DISPONIBLE Y CLIENTE NO REGISTRADO)\n");
+        System.out.println("\nExcepciones \n");
         try {
             supermercado.registrarCompra(cliente1, prodAlim);
         } catch (ClienteNoRegistradoException | ProductoNoDisponibleException e) {
