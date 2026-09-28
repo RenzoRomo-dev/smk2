@@ -172,6 +172,10 @@ public class Main {
                     break;
 
                 case 3:
+                    //ESto yo creo q lo deberia hacer supermercado para q no maneje la logica el main
+                    //entonces deberiamos agregar la func mostrarSalariosEmpleados() en supermercado
+                    //la actividad no lo pide pero seria lo mas limpio asi aca solo quedaria esta linea:
+                    //supermercado.mostrarSalariosEmpleados()
                     System.out.println("\n--- Salarios de Empleados ---");
                     for (Empleado emp : supermercado.getEmpleados()) {
                         System.out.println("ID: " + emp.getIdEmpleado() + " | Nombre: " + emp.getNombre()
@@ -206,7 +210,10 @@ public class Main {
                     Producto prodSeleccionado = (idxProd >= 0 && idxProd < supermercado.getProductosDisponibles().size())
                             ? supermercado.getProductosDisponibles().get(idxProd) : null;
 
+
+
                     try {
+                        //Esto tambien lo deberia manejar ClientVIP y estas lineas no harian falta
                         if (cliSeleccionado instanceof ClienteVIP && prodSeleccionado != null) {
                             ((ClienteVIP) cliSeleccionado).aplicarDescuentoVIP(prodSeleccionado);
                         }
