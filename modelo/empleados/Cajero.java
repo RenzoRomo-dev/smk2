@@ -1,4 +1,4 @@
-package com.example;
+package com.example.modelo.empleados;
 
 public class Cajero extends Empleado {
     private int ventasRealizadas;

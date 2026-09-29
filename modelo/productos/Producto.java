@@ -1,22 +1,24 @@
-package com.example;
+package com.example.modelo.productos;
 
 import java.util.UUID;
 
 public abstract class Producto {
 
+
     private static int totalProductos = 0;
     private String nombre;
     private UUID codigo; // Revisar funcionamiento del ID
-    private int precio;
+    private double precio;
     private String categoria;
 
     // Constructores
-    public Producto(String nombre, UUID codigo, Integer precio, String categoria) {
-        this.nombre = nombre;
+    public Producto(String nombre, Integer precio, String categoria) {
         this.codigo = UUID.randomUUID();
+        this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
         totalProductos++;
+
     }
 
     public static int getTotalProductos() {
@@ -26,6 +28,7 @@ public abstract class Producto {
 //    public static void setTotalProductos(int totalProductos) {
 //        Producto.totalProductos = totalProductos;
 //    }
+
 
     public String getNombre() {
         return nombre;
@@ -39,15 +42,15 @@ public abstract class Producto {
         return codigo;
     }
 
-    public void setCodigo(UUID codigo) {
-        this.codigo = codigo;
-    }
+//    public void setCodigo(UUID codigo) {
+//        this.codigo = codigo;
+//    }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -61,4 +64,6 @@ public abstract class Producto {
 
     public abstract double calcularPrecioFinal();
     public abstract String mostrarInformacion();
+
+
 }
