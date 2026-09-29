@@ -45,7 +45,9 @@ public class Cliente {
 
     // Metodos
     public void comprar(Producto producto) {
-        //necesitamos la logica de este metodo
+        if (producto != null) {
+            this.compras.add(producto);
+        }
     }
 
     public void mostrarCompras() {

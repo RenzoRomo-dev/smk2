@@ -198,13 +198,9 @@ public class Main {
                     Producto prodSeleccionado = (idxProd >= 0 && idxProd < supermercado.getProductosDisponibles().size())
                             ? supermercado.getProductosDisponibles().get(idxProd) : null;
 
-
-
                     try {
-                        //Esto tambien lo deberia manejar ClientVIP y estas lineas no harian falta
-                        if (cliSeleccionado instanceof ClienteVIP && prodSeleccionado != null) {
-                            ((ClienteVIP) cliSeleccionado).aplicarDescuentoVIP(prodSeleccionado);
-                        }
+                        // El Supermercado registra la compra, si el cliente resulta ser VIP
+                        // su metodo comprar() aplica el descuento
                         supermercado.registrarCompra(cliSeleccionado, prodSeleccionado);
                     } catch (ClienteNoRegistradoException | ProductoNoDisponibleException e) {
                         System.out.println(e.getMessage());
