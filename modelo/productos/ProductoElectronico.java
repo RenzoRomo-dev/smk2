@@ -45,7 +45,7 @@ public class ProductoElectronico extends Producto implements Promocionable, Impu
                 getCategoria(),
                 getNombre(),
                 getCodigo(),
-                (double) getPrecio(),
+                getPrecio(),
                 calcularPrecioFinal(),
                 garantia + (garantia == 1 ? " año" : " años")
 

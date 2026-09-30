@@ -38,6 +38,11 @@ public class ProductoAlimenticio extends Producto implements Promocionable {
     public double calcularPrecioFinal() {
         double precioBase = this.getPrecio();
 
+        // Si no es perecedero o la fecha es null, no aplica descuento por caducidad
+        if (!this.esPerecedero || this.fechaCaducidad == null) {
+            return getPrecio(); // Retorna el precio base sin modificaciones
+        }
+
         // ChronoUnit.DAYS.between
         // funcion que calcula los días restantes entre hoy y la fecha de caducidad
         long diasRestantes = ChronoUnit.DAYS.between(LocalDate.now(), this.fechaCaducidad);
@@ -56,7 +61,7 @@ public class ProductoAlimenticio extends Producto implements Promocionable {
                 getCategoria(),
                 getNombre(),
                 getCodigo(),
-                (double) getPrecio(),
+                getPrecio(),
                 calcularPrecioFinal(),
                 fechaCaducidad,
                 esPerecedero ? "Sí" : "No"

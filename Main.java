@@ -124,13 +124,30 @@ public class Main {
                     int precio = scanner.nextInt();
                     scanner.nextLine();
 
-                    if (tipo == 1) {
-                        System.out.print("Días para caducar: ");
-                        int dias = scanner.nextInt();
+                    if (tipo == 1) { // Arreglo de logica de Porducto perecedero
                         System.out.print("¿Es perecedero? (true/false): ");
                         boolean perecedero = scanner.nextBoolean();
-                        supermercado.agregarProducto(new ProductoAlimenticio(
-                                nombProd, precio, "Alimentación", LocalDate.now().plusDays(dias), perecedero));
+                        scanner.nextLine(); // Limpia el buffer del scanner
+
+                        if (perecedero) {
+                            System.out.print("Días para caducar: ");
+                            int dias = scanner.nextInt();
+                            scanner.nextLine(); // Limpia el buffer tras el int
+
+                            supermercado.agregarProducto(new ProductoAlimenticio(
+                                    nombProd, precio, "Alimentación", LocalDate.now().plusDays(dias), perecedero));
+                        } else {
+                            // No perecedero: puedes pasar null o la fecha por defecto según tu modelo
+                            supermercado.agregarProducto(new ProductoAlimenticio(
+                                    nombProd, precio, "Alimentación", null, perecedero));
+                        }
+
+//                        System.out.print("Días para caducar: ");
+//                        int dias = scanner.nextInt();
+//                        System.out.print("¿Es perecedero? (true/false): ");
+//                        boolean perecedero = scanner.nextBoolean();
+//                        supermercado.agregarProducto(new ProductoAlimenticio(
+//                                nombProd, precio, "Alimentación", LocalDate.now().plusDays(dias), perecedero));
                     } else if (tipo == 2) {
                         System.out.print("Años de garantía: ");
                         int garantia = scanner.nextInt();

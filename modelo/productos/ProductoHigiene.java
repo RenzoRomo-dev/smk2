@@ -37,7 +37,7 @@ public class ProductoHigiene extends Producto implements Promocionable, Impuesto
                 getCategoria(),
                 getNombre(),
                 getCodigo(),
-                (double) getPrecio(),
+                getPrecio(),
                 calcularPrecioFinal(),
                 tipoDeUso
 
